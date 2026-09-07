@@ -87,3 +87,67 @@
   .contact-actions{display:grid;grid-template-columns:1fr 1fr}
   .round-action{width:100%;justify-content:center}
 }
+
+
+/* ===== V4.2 - refinamento final de ações e tipo sanguíneo ===== */
+
+.blood-badge{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+}
+.blood-badge .blood-label{
+  display:block;
+  font-size:.64rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:#7f1d1d;
+}
+.blood-badge .blood-text{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+.blood-badge .blood-name{
+  font-size:.82rem;
+  color:#6b7280;
+  font-weight:700;
+}
+
+@media(max-width:620px){
+  .blood-badge{
+    flex-direction:row;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .blood-badge .blood-text{
+    margin-left:auto;
+  }
+}
+
+.contact-actions .round-call{
+  background:#fff1f2;
+  color:#b91c1c;
+  border:1px solid #fecdd3;
+}
+.contact-actions .round-call:hover,
+.contact-actions .round-call:focus-visible{
+  background:#ffe4e6;
+}
+
+.quick-action.quick-red .qa-icon svg,
+.quick-action.quick-green .qa-icon svg{
+  width:22px;
+  height:22px;
+}
+
+.service-action.phone{
+  color:inherit;
+}
+
+.service-action.phone svg{
+  width:20px;
+  height:20px;
+}

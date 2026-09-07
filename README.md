@@ -37,3 +37,12 @@ Para foto, coloque o arquivo em `assets/`, por exemplo `assets/raul.jpg`, e no d
 ```js
 foto: "../../assets/raul.jpg"
 ```
+
+
+## V4.2
+
+- botão Ligar dos contatos agora usa visual claro/vermelho, em vez de preto
+- ícone de WhatsApp superior corrigido para SVG completo
+- ícones de telefone do SAMU e Bombeiros corrigidos
+- tipo sanguíneo agora aparece como "TIPO SANGUÍNEO" + descrição (ex.: A+ / A positivo)
+- URLs e dados permanecem inalterados

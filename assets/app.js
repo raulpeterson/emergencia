@@ -25,6 +25,24 @@ document.getElementById("idade").textContent=`${calcularIdade(ficha.nascimento)}
 document.getElementById("sangue").textContent=ficha.sangue;
 document.getElementById("initials").textContent=iniciais(ficha.nome);
 
+const phoneSvg=`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>`;
+const whatsappSvg=`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 8.5c.6 2.5 2.5 4.4 5 5"/></svg>`;
+document.querySelector(".quick-red .qa-icon").innerHTML=phoneSvg;
+document.querySelector(".quick-green .qa-icon").innerHTML=whatsappSvg;
+
+const nomesSangue={
+  "A+":"A positivo",
+  "A-":"A negativo",
+  "B+":"B positivo",
+  "B-":"B negativo",
+  "AB+":"AB positivo",
+  "AB-":"AB negativo",
+  "O+":"O positivo",
+  "O-":"O negativo"
+};
+const bloodBadge=document.querySelector(".blood-badge");
+bloodBadge.innerHTML=`<span class="blood-label">TIPO SANGUÍNEO</span><div class="blood-text"><strong id="sangue">${ficha.sangue}</strong><span class="blood-name">${nomesSangue[ficha.sangue]||""}</span></div>`;
+
 if(ficha.foto){
   const img=document.getElementById("foto");
   img.src=ficha.foto;
