@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#991b1b">
+<title>Ficha de Emergência</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<main class="app-shell">
+<section class="profile-card">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="brand-pill"><span class="brand-icon">✚</span><span>EMERGÊNCIA</span></div>
+      <button class="icon-btn" id="shareBtn" aria-label="Compartilhar ficha">↗</button>
+    </div>
+    <div class="profile-head">
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <img id="foto" class="avatar" alt="Foto da pessoa">
+          <div id="initials" class="avatar-fallback">--</div>
+        </div>
+        <span class="status-dot"></span>
+      </div>
+      <div class="identity">
+        <p class="kicker">Ficha médica de emergência</p>
+        <h1 id="nome"></h1>
+        <p id="idade" class="age-line"></p>
+        <div class="hero-badges">
+          <span class="soft-badge">Ficha ativa</span>
+          <span id="doadorBadge" class="soft-badge soft-badge-green">Doador</span>
+        </div>
+      </div>
+      <div class="blood-badge"><span>TIPO</span><strong id="sangue"></strong></div>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <a id="callPrimary" class="quick-action quick-red" href="#"><span class="qa-icon">☎</span><span><small>CONTATO PRINCIPAL</small><strong>Ligar agora</strong></span></a>
+    <a id="whatsPrimary" class="quick-action quick-green" href="#" target="_blank" rel="noopener"><span class="qa-icon">◉</span><span><small>WHATSAPP</small><strong>Enviar mensagem</strong></span></a>
+  </div>
+
+  <section id="alergiasCard" class="alert-card hidden">
+    <div class="section-title"><div class="section-icon">!</div><div><span>ATENÇÃO IMEDIATA</span><h2>Alergias</h2></div></div>
+    <p data-value></p>
+  </section>
+
+  <section class="info-grid">
+    <article id="medicamentosCard" class="info-card hidden"><div class="icon-box">💊</div><div><span class="info-label">Medicamentos</span><p data-value></p></div></article>
+    <article id="condicoesCard" class="info-card hidden"><div class="icon-box">🩺</div><div><span class="info-label">Condições médicas</span><p data-value></p></div></article>
+    <article id="convenioCard" class="info-card hidden"><div class="icon-box">🏥</div><div><span class="info-label">Convênio</span><p data-value></p></div></article>
+    <article id="orientacoesCard" class="info-card hidden"><div class="icon-box">📋</div><div><span class="info-label">Orientações</span><p data-value></p></div></article>
+  </section>
+
+  <section class="contacts-section">
+    <div class="section-heading-row"><div><span class="eyebrow-dark">CONTATOS</span><h2>Emergência</h2></div><span id="contactCount" class="count-pill">0</span></div>
+    <div id="contatos" class="contacts-list"></div>
+  </section>
+
+  <section class="service-section">
+    <div class="section-heading-row"><div><span class="eyebrow-dark">SERVIÇOS</span><h2>Ajuda imediata</h2></div></div>
+    <div class="service-grid">
+      <a class="service-card" href="tel:192"><span class="service-icon">✚</span><span><small>SAMU</small><strong>192</strong></span></a>
+      <a class="service-card" href="tel:193"><span class="service-icon">🔥</span><span><small>BOMBEIROS</small><strong>193</strong></span></a>
+      <button class="service-card" id="locationBtn"><span class="service-icon">⌖</span><span><small>LOCALIZAÇÃO</small><strong>Compartilhar</strong></span></button>
+    </div>
+    <p id="locationStatus" class="status-text"></p>
+  </section>
+
+  <footer class="footer-note"><div class="shield">✓</div><p>Informações fornecidas pelo responsável. Esta ficha auxilia em situações de emergência e não substitui avaliação médica profissional.</p></footer>
+</section>
+</main>
+<script src="data.js"></script>
+<script src="../../assets/app.js"></script>
+</body>
+</html>
