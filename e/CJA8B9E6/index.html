@@ -61,9 +61,35 @@
   <section class="service-section">
     <div class="section-heading-row"><div><span class="eyebrow-dark">SERVIÇOS</span><h2>Ajuda imediata</h2></div></div>
     <div class="service-grid">
-      <a class="service-card" href="tel:192"><span class="service-icon">✚</span><span><small>SAMU</small><strong>192</strong></span></a>
-      <a class="service-card" href="tel:193"><span class="service-icon">🔥</span><span><small>BOMBEIROS</small><strong>193</strong></span></a>
-      <button class="service-card" id="locationBtn"><span class="service-icon">⌖</span><span><small>LOCALIZAÇÃO</small><strong>Compartilhar</strong></span></button>
+      <a class="service-card emergency-medical" href="tel:192">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+        </span>
+        <span class="service-copy"><small>SAMU 192</small><strong>Emergência médica</strong><span>Atendimento pré-hospitalar</span></span>
+        <span class="service-action">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+        </span>
+      </a>
+
+      <a class="service-card emergency-fire" href="tel:193">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 8-3.6 8-8 0-5-4-8-6-12 0 4-2 6-4 8-2 2-4 4-4 7a6 6 0 0 0 6 5z"/><path d="M9 18c0-2 1.5-3 3-5 0 2 2 3 2 5a2.5 2.5 0 0 1-5 0z"/></svg>
+        </span>
+        <span class="service-copy"><small>BOMBEIROS 193</small><strong>Resgate e incêndio</strong><span>Socorro e salvamento</span></span>
+        <span class="service-action">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+        </span>
+      </a>
+
+      <button class="service-card emergency-location" id="locationBtn">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="service-copy"><small>LOCALIZAÇÃO</small><strong>Compartilhar localização</strong><span>Enviar ao contato principal</span></span>
+        <span class="service-action">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </span>
+      </button>
     </div>
     <p id="locationStatus" class="status-text"></p>
   </section>

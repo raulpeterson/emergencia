@@ -48,14 +48,23 @@ ficha.contatos.forEach(contato=>{
   const tel=somenteNumeros(contato.telefone);
   const card=document.createElement("article");
   card.className="contact-card";
+  const phoneIcon = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>`;
+  const waIcon = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>`;
   card.innerHTML=`
-    <div>
+    <div class="contact-main">
       <div class="contact-name">${contato.nome}</div>
-      <div class="contact-role">${contato.parentesco}</div>
+      <div class="contact-role">
+        <span>${contato.parentesco}</span>
+        ${ficha.contatos[0] === contato ? `<span class="dot"></span><span class="primary-label">Contato principal</span>` : ""}
+      </div>
     </div>
     <div class="contact-actions">
-      <a class="round-action round-call" href="tel:${contato.telefone}" aria-label="Ligar para ${contato.nome}">☎</a>
-      ${contato.whatsapp?`<a class="round-action round-wa" href="https://wa.me/${tel}" target="_blank" rel="noopener" aria-label="WhatsApp de ${contato.nome}">◉</a>`:""}
+      <a class="round-action round-call" href="tel:${contato.telefone}" aria-label="Ligar para ${contato.nome}">
+        ${phoneIcon}<span class="round-label">Ligar</span>
+      </a>
+      ${contato.whatsapp?`<a class="round-action round-wa" href="https://wa.me/${tel}" target="_blank" rel="noopener" aria-label="WhatsApp de ${contato.nome}">
+        ${waIcon}<span class="round-label">WhatsApp</span>
+      </a>`:""}
     </div>`;
   contatosEl.appendChild(card);
 });
