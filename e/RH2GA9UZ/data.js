@@ -3,17 +3,17 @@ const ficha = {
   "nascimento": "23/11/1990",
   "sangue": "A-",
   "foto": "",
-  "doador": false,
+  "doador": true,
   "alergias": "",
   "medicamentos": "",
   "condicoes": "",
   "orientacoes": "",
-  "convenio": "",
+  "convenio": "Unimed",
   "contatos": [
     {
       "nome": "Jessica Borges Schwarz",
       "parentesco": "Esposa",
-      "telefone": "+5545999849640",
+      "telefone": "+5545999265020",
       "whatsapp": true
     }
   ]
