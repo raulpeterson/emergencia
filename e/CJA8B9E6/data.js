@@ -8,7 +8,7 @@ const ficha = {
   "medicamentos": "",
   "condicoes": "",
   "orientacoes": "",
-  "convenio": "",
+  "convenio": "Unimed",
   "contatos": [
     {
       "nome": "Raul Peterson Horn Schwarz",
