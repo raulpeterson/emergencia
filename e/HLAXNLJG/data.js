@@ -22,5 +22,11 @@ const ficha = {
       "telefone": "+5545999265020",
       "whatsapp": true
     }
+    {
+      "nome": "Ramiro Borges da Silveira  ",
+      "parentesco": "Avô",
+      "telefone": "+5545999849640",
+      "whatsapp": true
+    },
   ]
 };
