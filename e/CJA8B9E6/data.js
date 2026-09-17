@@ -3,7 +3,7 @@ const ficha = {
   "nascimento": "06/12/1991",
   "sangue": "A+",
   "foto": "",
-  "doador": false,
+  "doador": true,
   "alergias": "",
   "medicamentos": "",
   "condicoes": "",
@@ -13,7 +13,13 @@ const ficha = {
     {
       "nome": "Raul Peterson Horn Schwarz",
       "parentesco": "Marido",
-      "telefone": "+5545999265020",
+      "telefone": "+5545999849640",
+      "whatsapp": true
+    },
+    {
+      "nome": "Ramiro Borges da Silveira",
+      "parentesco": "Pai",
+      "telefone": "+5545999351620",
       "whatsapp": true
     }
   ]
