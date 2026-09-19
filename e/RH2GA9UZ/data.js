@@ -18,7 +18,7 @@ const ficha = {
     },
     {
       "nome": "Dircele Horn",
-      "parentesco": "Esposa",
+      "parentesco": "Mãe",
       "telefone": "+5545920037802",
       "whatsapp": true
     }
