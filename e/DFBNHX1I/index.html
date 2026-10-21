@@ -33,11 +33,24 @@ html,body{width:100%;max-width:100%;overflow-x:clip}#atuacao,#sobre,#contato{scr
  footer{padding:28px 18px}
 }
 @media(max-width:380px){.identity strong{font-size:13px}.identity small{font-size:7px;letter-spacing:.12em}.identity img{width:43px;height:43px}.nav-cta{padding:9px 10px;font-size:11px}}
+
+/* V4: áreas objetivas e vídeos em seção independente */
+.area-card{justify-content:flex-start;gap:8px;min-height:190px}
+.area-card h3{min-height:0;margin:0}
+.area-card p{flex:0 0 auto;margin:0;font-size:15px;line-height:1.55}
+.video-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.video-item{background:#fffdf8;border:1px solid var(--border);border-radius:14px;padding:20px;min-width:0}
+.video-item h3{font-size:21px;font-weight:normal;margin:0 0 15px}
+.video-item .video{min-height:0;aspect-ratio:16/9}
+.video-play{cursor:pointer;border:0;background:var(--forest);color:white;border-radius:28px;padding:12px 19px;font:600 14px system-ui,sans-serif}
+#atuacao,#videos,#sobre,#contato{scroll-margin-top:115px}
+@media(max-width:760px){.area-card{min-height:0;padding:24px 20px}.area-card h3{font-size:24px}.area-card p{font-size:16px}.video-cards{grid-template-columns:1fr;gap:16px}.video-item{padding:16px}.video-item h3{font-size:21px}}
 </style></head><body>
 <header><nav class="wrap"><a class="identity" href="#inicio"><img src="assets/monograma.webp" alt="Monograma SS"><span><strong>DRA. STHÉFANIE<br>SCHWARZ</strong><small>MÉDICA · CRM-PR 60163</small></span></a><div class="navlinks"><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#atuacao">Áreas de atuação</a><a href="#videos">Vídeos</a><a href="#contato">Contato</a><a class="nav-cta" data-wa href="https://wa.me/5545999994755" target="_blank" rel="noopener noreferrer">Agendar ↗</a></div></nav></header>
 <main><div class="hero" id="inicio"><div class="wrap hero-inner"><div class="hero-copy"><h1>Cuidado com você e sua família em todas as fases da vida</h1><p>Atendimento médico com acolhimento e escuta, com foco na prevenção, diagnóstico e tratamento.</p><div class="actions"><a class="btn btn-green" data-wa href="https://wa.me/5545999994755" target="_blank" rel="noopener noreferrer">◉ &nbsp; Agendar pelo WhatsApp →</a><a class="btn btn-outline" data-instagram href="https://www.instagram.com/dra.sthefanieschwarz/" target="_blank" rel="noopener noreferrer">◎ &nbsp; Instagram ↗</a></div></div><div class="hero-image"><img src="assets/sthefanie.webp" alt="Dra. Sthéfanie Schwarz em seu consultório" fetchpriority="high"></div></div></div>
 <div class="wrap benefits"><div class="benefit"><span class="ico">♧</span>Atendimento humanizado</div><div class="benefit"><span class="ico">♢</span>Prevenção e bem-estar</div><div class="benefit"><span class="ico">♡</span>Cuidado em diferentes fases da vida</div><div class="benefit"><span class="ico">⚕</span>Áreas de atuação diversificadas</div></div>
-<section class="wrap" id="atuacao"><div class="section-heading"><h2>Áreas de atuação</h2></div><p class="intro">Conheça os atendimentos e, quando disponíveis, assista aos vídeos explicativos sobre cada área.</p><div class="cards" id="videos"></div></section>
+<section class="wrap" id="atuacao"><div class="section-heading"><h2>Áreas de atuação</h2></div><p class="intro">Conheça as principais áreas de atendimento e os cuidados oferecidos.</p><div class="cards" id="atuacao-cards"></div></section>
+<section class="wrap" id="videos"><div class="section-heading"><h2>Vídeos explicativos</h2></div><p class="intro">Em breve, conteúdos apresentados pela Dra. Sthéfanie para explicar os atendimentos e esclarecer dúvidas frequentes.</p><div class="video-cards" id="video-cards"></div></section>
 <section class="wrap" id="sobre"><div class="section-heading"><h2>Sobre a médica</h2></div><div class="about-grid about-simple"><div><p>A Dra. Sthéfanie Schwarz é médica, com registro CRM-PR 60163, e realiza atendimentos em Cascavel e região.</p><p>Seu trabalho envolve prevenção, diagnóstico, tratamento e acompanhamento clínico, com atenção às necessidades individuais de cada paciente.</p></div></div></section>
 <section class="wrap" id="contato"><div class="contact"><div><h2>Atendimento em Cascavel e região</h2><p>Consulte locais, horários e disponibilidade diretamente pelo WhatsApp.</p></div><a class="btn" data-wa href="https://wa.me/5545999994755" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp ↗</a></div></section></main>
 <footer><strong>Dra. Sthéfanie Schwarz · Médica · CRM-PR 60163</strong><br>Atendimento em Cascavel e região · Informações institucionais e educativas.<br>Conteúdos informativos não substituem avaliação médica individualizada.</footer>
@@ -45,6 +58,25 @@ html,body{width:100%;max-width:100%;overflow-x:clip}#atuacao,#sobre,#contato{scr
 const defaults=[{titulo:'Medicina Geral',descricao:'Prevenção, diagnóstico e tratamento.',youtube:''},{titulo:'Procedimentos Médicos Ambulatoriais',descricao:'Retirada de pintas, verrugas e sinais de pele, cistos, tratamento de xantelasma, unhas encravadas e correção do lóbulo da orelha.',youtube:''},{titulo:'Saúde Ocupacional',descricao:'Acompanhamento e avaliação clínica do trabalhador.',youtube:''},{titulo:'Saúde Infantojuvenil',descricao:'Crescimento, desenvolvimento e acompanhamento.',youtube:''}];
 const symbols=['⚕','✧','♧','♡'];
 function getId(url){try{const u=new URL(url);if(u.hostname==='youtu.be')return u.pathname.split('/')[1];if(['youtube.com','www.youtube.com','m.youtube.com'].includes(u.hostname)){if(u.pathname==='/watch')return u.searchParams.get('v');if(u.pathname.startsWith('/shorts/')||u.pathname.startsWith('/embed/'))return u.pathname.split('/')[2]}}catch(e){}return null}
-function render(items){const target=document.getElementById('videos');target.replaceChildren();items.forEach((v,i)=>{const card=document.createElement('article');card.className='card';const icon=document.createElement('div');icon.className='card-icon';icon.textContent=symbols[i%symbols.length];const h=document.createElement('h3');h.textContent=v.titulo;const p=document.createElement('p');p.textContent=v.descricao;const vid=document.createElement('div');vid.className='video';const id=getId(v.youtube||'');const valid=id&&/^[A-Za-z0-9_-]{11}$/.test(id);if(valid){const play=document.createElement('span');play.className='play';play.textContent='▶';vid.append(play)}else{const msg=document.createElement('span');msg.className='video-label';msg.textContent='Vídeo de apresentação em breve';vid.append(msg)}const button=document.createElement('button');button.className='watch';button.textContent=valid?'▶ Assistir vídeo':'Vídeo em breve';button.disabled=!valid;if(valid)button.addEventListener('click',()=>{const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1';iframe.title='Apresentação: '+v.titulo;iframe.loading='lazy';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;vid.replaceChildren(iframe);button.textContent='Vídeo em reprodução';button.disabled=true});card.append(icon,h,p,vid,button);target.append(card)})}
+function render(items){
+ const areas=document.getElementById('atuacao-cards');
+ const videos=document.getElementById('video-cards');
+ areas.replaceChildren(); videos.replaceChildren();
+ items.forEach((v,i)=>{
+  const card=document.createElement('article');card.className='card area-card';
+  const icon=document.createElement('div');icon.className='card-icon';icon.textContent=symbols[i%symbols.length];
+  const h=document.createElement('h3');h.textContent=v.titulo;
+  const p=document.createElement('p');p.textContent=v.descricao;
+  card.append(icon,h,p);areas.append(card);
+  const item=document.createElement('article');item.className='video-item';
+  const title=document.createElement('h3');title.textContent=v.titulo;
+  const vid=document.createElement('div');vid.className='video';
+  const id=getId(v.youtube||'');const valid=id&&/^[A-Za-z0-9_-]{11}$/.test(id);
+  if(valid){const play=document.createElement('button');play.className='video-play';play.type='button';play.textContent='▶ Assistir apresentação';play.addEventListener('click',()=>{const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1';iframe.title='Apresentação: '+v.titulo;iframe.loading='lazy';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;vid.replaceChildren(iframe)});vid.append(play)}
+  else {const msg=document.createElement('span');msg.className='video-label';msg.textContent='Vídeo de apresentação em breve';vid.append(msg)}
+  item.append(title,vid);videos.append(item);
+ });
+}
+
 render(defaults);fetch('config.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(c=>{if(Array.isArray(c.videos))render(c.videos);if(c.whatsapp)document.querySelectorAll('[data-wa]').forEach(a=>a.href='https://wa.me/'+String(c.whatsapp).replace(/\D/g,''));if(c.instagram)document.querySelectorAll('[data-instagram]').forEach(a=>a.href=c.instagram)}).catch(()=>{});
 </script></body></html>
