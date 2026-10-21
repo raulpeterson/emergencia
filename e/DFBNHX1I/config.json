@@ -1,27 +1,24 @@
 {
-  "nome": "Dra. Sthéfanie Schwarz",
-  "crm": "CRM-PR 60163",
   "whatsapp": "5545999994755",
   "instagram": "https://www.instagram.com/dra.sthefanieschwarz/",
-  "local": "Cascavel e região",
   "videos": [
     {
-      "titulo": "Medicina geral",
+      "titulo": "Medicina Geral",
       "descricao": "Prevenção, diagnóstico e tratamento.",
       "youtube": ""
     },
     {
-      "titulo": "Procedimentos médicos ambulatoriais",
-      "descricao": "Avaliação e realização de procedimentos ambulatoriais, conforme indicação clínica.",
+      "titulo": "Procedimentos Médicos Ambulatoriais",
+      "descricao": "Retirada de pintas, verrugas e sinais de pele, cistos, tratamento de xantelasma, unhas encravadas e correção do lóbulo da orelha.",
       "youtube": ""
     },
     {
-      "titulo": "Saúde ocupacional",
+      "titulo": "Saúde Ocupacional",
       "descricao": "Acompanhamento e avaliação clínica do trabalhador.",
       "youtube": ""
     },
     {
-      "titulo": "Saúde infantojuvenil",
+      "titulo": "Saúde Infantojuvenil",
       "descricao": "Crescimento, desenvolvimento e acompanhamento.",
       "youtube": ""
     }
