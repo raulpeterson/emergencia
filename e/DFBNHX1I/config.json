@@ -1,0 +1,29 @@
+{
+  "nome": "Dra. Sthéfanie Schwarz",
+  "crm": "CRM-PR 60163",
+  "whatsapp": "5545999994755",
+  "instagram": "https://www.instagram.com/dra.sthefanieschwarz/",
+  "local": "Cascavel e região",
+  "videos": [
+    {
+      "titulo": "Medicina geral",
+      "descricao": "Prevenção, diagnóstico e tratamento.",
+      "youtube": ""
+    },
+    {
+      "titulo": "Procedimentos médicos ambulatoriais",
+      "descricao": "Avaliação e realização de procedimentos ambulatoriais, conforme indicação clínica.",
+      "youtube": ""
+    },
+    {
+      "titulo": "Saúde ocupacional",
+      "descricao": "Acompanhamento e avaliação clínica do trabalhador.",
+      "youtube": ""
+    },
+    {
+      "titulo": "Saúde infantojuvenil",
+      "descricao": "Crescimento, desenvolvimento e acompanhamento.",
+      "youtube": ""
+    }
+  ]
+}
